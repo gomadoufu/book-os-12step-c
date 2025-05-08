@@ -1,0 +1,87 @@
+[
+ {
+  "directory": "/Users/gomadoufu/ghq/github.com/gomadoufu/book-os-12step-c/src/01/bootload",
+  "arguments": [
+   "../../../tools/gcc-14.2.0-h8300/bin/h8300-elf-gcc",
+   "-c",
+   "-Wall",
+   "-mh",
+   "-nostdlib",
+   "-nostdinc",
+   "-fno-builtin",
+   "-I.",
+   "-Os",
+   "-DKZLOAD",
+   "vector.c"
+  ],
+  "file": "vector.c"
+ },
+ {
+  "directory": "/Users/gomadoufu/ghq/github.com/gomadoufu/book-os-12step-c/src/01/bootload",
+  "arguments": [
+   "../../../tools/gcc-14.2.0-h8300/bin/h8300-elf-gcc",
+   "-c",
+   "-Wall",
+   "-mh",
+   "-nostdlib",
+   "-nostdinc",
+   "-fno-builtin",
+   "-I.",
+   "-Os",
+   "-DKZLOAD",
+   "startup.s"
+  ],
+  "file": "startup.s"
+ },
+ {
+  "directory": "/Users/gomadoufu/ghq/github.com/gomadoufu/book-os-12step-c/src/01/bootload",
+  "arguments": [
+   "../../../tools/gcc-14.2.0-h8300/bin/h8300-elf-gcc",
+   "-c",
+   "-Wall",
+   "-mh",
+   "-nostdlib",
+   "-nostdinc",
+   "-fno-builtin",
+   "-I.",
+   "-Os",
+   "-DKZLOAD",
+   "main.c"
+  ],
+  "file": "main.c"
+ },
+ {
+  "directory": "/Users/gomadoufu/ghq/github.com/gomadoufu/book-os-12step-c/src/01/bootload",
+  "arguments": [
+   "../../../tools/gcc-14.2.0-h8300/bin/h8300-elf-gcc",
+   "-c",
+   "-Wall",
+   "-mh",
+   "-nostdlib",
+   "-nostdinc",
+   "-fno-builtin",
+   "-I.",
+   "-Os",
+   "-DKZLOAD",
+   "lib.c"
+  ],
+  "file": "lib.c"
+ },
+ {
+  "directory": "/Users/gomadoufu/ghq/github.com/gomadoufu/book-os-12step-c/src/01/bootload",
+  "arguments": [
+   "../../../tools/gcc-14.2.0-h8300/bin/h8300-elf-gcc",
+   "-c",
+   "-Wall",
+   "-mh",
+   "-nostdlib",
+   "-nostdinc",
+   "-fno-builtin",
+   "-I.",
+   "-Os",
+   "-DKZLOAD",
+   "serial.c"
+  ],
+  "file": "serial.c"
+ }
+]
