@@ -1,30 +1,21 @@
-TOOLS = ../../../tools
-
+PREFIX = $(HOME)/.local
 ARCH = h8300-elf
-ARCHHYPHEN = h8300-elf-
-ADDNAME= $(ARCHHYPHEN)
+BINDIR = $(PREFIX)/bin
+ADDNAME = $(ARCH)-
 
-BINUTILSDIR = binutils-2.21
-BINUTILSBIN = $(TOOLS)/$(BINUTILSDIR)/bin
+AR = $(BINDIR)/$(ADDNAME)ar
+AS = $(BINDIR)/$(ADDNAME)as
+CC = $(BINDIR)/$(ADDNAME)gcc
+LD = $(BINDIR)/$(ADDNAME)ld
+NM = $(BINDIR)/$(ADDNAME)nm
+OBJCOPY = $(BINDIR)/$(ADDNAME)objcopy
+OBJDUMP = $(BINDIR)/$(ADDNAME)objdump
+RANLIB = $(BINDIR)/$(ADDNAME)ranlib
+STRIP = $(BINDIR)/$(ADDNAME)strip
 
-GCCDIR = gcc-14.2.0-h8300
-GCCBIN = $(TOOLS)/$(GCCDIR)/bin
+H8WRITE = $(HOME)/.local/bin/kz_h8write
 
-BIN = $(BINUTILSBIN)
-
-AR = $(BIN)/$(ADDNAME)ar
-AS = $(BIN)/$(ADDNAME)as
-CC = $(GCCBIN)/$(ADDNAME)gcc
-LD = $(BIN)/$(ADDNAME)ld
-NM = $(BIN)/$(ADDNAME)nm
-OBJCOPY = $(BIN)/$(ADDNAME)objcopy
-OBJDUMP = $(BIN)/$(ADDNAME)objdump
-RANLIB = $(BIN)/$(ADDNAME)ranlib
-STRIP = $(BIN)/$(ADDNAME)strip
-
-H8WRITE = $(TOOLS)/kz_h8write/kz_h8write
-
-H8WRITE_SERDEV = /dev/tty.usbserial-FTRTK8FG
+H8WRITE_SERDEV = /dev/ttyUSB1
 
 OBJS = vector.o startup.o main.o
 OBJS += lib.o serial.o
