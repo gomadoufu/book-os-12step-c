@@ -9,5 +9,27 @@
 - 組み込み機器とは、「特定の目的のためだけに作られている専用機器」のこと。
 - 汎用OSにはタスクの優先度がないが、組み込みOSには優先度がある。
 * 第1部 ブートローダーの作成
-** 1stステップ 開発環境の作成
+** 2ndステップ シリアル通信
+シリアル通信を行う専用のチップがあり、このチップのレジスタのビットを立てたり落としたりして操作する。
 
+シリアル・コントローラのアドレスピンはCPUのアドレス・バスにつながっており、
+コントローラのレジスタがアドレス空間上にマップされている。この方式を ~メモリマップトIO~ という。
+
+C言語から操作するときは、大抵 専用の構造体を用意する
+#+begin_src C
+  #define SERIAL_REGADDR
+
+  struct serial_regs {
+      volatile char reg1;
+      volatile char reg2;
+      volatile char reg3;
+      // ...
+      volatile char reg16;
+  };
+
+  volatile struct serial_regs *serreg;
+  serreg = (struct serial_regs *)SERIAL_REGADDR;
+
+  c = serreg->reg1; // 読み出し
+  serreg->reg1 = 0x01; // 書き込み
+#+end_src
